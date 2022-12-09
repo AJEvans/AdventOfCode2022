@@ -40,7 +40,7 @@ HAI 1.4
         
         IM OUTTA YR fruitLoopsChasingMeTail
         
-        I IZ showMeTheNoms YR bukkitOfNomz MKAY 
+        BTW I IZ showMeTheNoms YR bukkitOfNomz MKAY 
         
         I IZ STDIO'Z CLOSE YR nomsFile MKAY
 
@@ -71,9 +71,9 @@ HAI 1.4
 
 
 
-    BTW FUNKSHUN IT PLAY 
+    BTW FUNKSHUN IT PLAY PARTY 1
     BTW ------------------------------------------------------------------------
-    HOW IZ I playsARoond YR bukkitOfNomz AN YR pos AN YR rukTreat AN YR papesTreat AN YR skizzorsTreat AN YR yrRukLitter AN YR yrPapesLitter AN YR yrSkizzorsLitter AN YR meRukLitter AN YR mePapesLitter AN YR meSkizzorsLitter AN YR playTreats AN YR party
+    HOW IZ I playsARoond1 YR bukkitOfNomz AN YR pos AN YR rukTreat AN YR papesTreat AN YR skizzorsTreat AN YR yrRukLitter AN YR yrPapesLitter AN YR yrSkizzorsLitter AN YR meRukLitter AN YR mePapesLitter AN YR meSkizzorsLitter AN YR playTreats 
     
         I HAS A useTreat ITZ 0
         I HAS A playTreat ITZ 0
@@ -93,37 +93,68 @@ HAI 1.4
                 yrGo R "yrSkizzors"
         OIC
         
-        
-        BOTH SAEM party AN FAIL, O RLY? 
-        
-            YA RLY, BTW RUNS FUR PART 1
-            
-                BOTH SAEM meTry AN meRukLitter, O RLY?
-                    YA RLY, 
-                        meGo R "meRuk"
-                        useTreat R rukTreat
-                    MEBBE BOTH SAEM meTry AN mePapesLitter    
-                        meGo R "mePapes"
-                        useTreat R papesTreat
-                    NO WAI
-                        meGo R "meSkizzors"
-                        useTreat R skizzorsTreat
-                OIC
-                       
-                I HAS A playTreatBukkit ITZ playTreats'Z SRS yrGo
-                playTreat R playTreatBukkit'Z SRS meGo
-                treatsBowl R SUM OF useTreat AN playTreat
-                
-                VISIBLE SMOOSH pos AN " " AN yrTry AN " " AN yrGo AN " " AN meTry AN " " AN meGo...
-                     AN " " AN useTreat AN "+" AN playTreat AN "=" AN  treatsBowl MKAY
-            
-        NO WAI, BTW RUNS FUR PART 2
-        
-        
-        
+   
+        BOTH SAEM meTry AN meRukLitter, O RLY?
+            YA RLY, 
+                meGo R "meRuk"
+                useTreat R rukTreat
+            MEBBE BOTH SAEM meTry AN mePapesLitter    
+                meGo R "mePapes"
+                useTreat R papesTreat
+            NO WAI
+                meGo R "meSkizzors"
+                useTreat R skizzorsTreat
         OIC
+               
+        I HAS A playTreatBukkit ITZ playTreats'Z SRS yrGo
+        playTreat R playTreatBukkit'Z SRS meGo
+        treatsBowl R SUM OF useTreat AN playTreat
         
         FOUND YR treatsBowl
+        
+    
+    IF U SAY SO
+    BTW-------------------------------------------------------------------------
+
+
+
+
+    BTW FUNKSHUN IT PLAY PARTY 2
+    BTW ------------------------------------------------------------------------
+    HOW IZ I playsARoond2 YR bukkitOfNomz AN YR pos AN YR rukTreat AN YR papesTreat AN YR skizzorsTreat AN YR yrRukLitter AN YR yrPapesLitter AN YR yrSkizzorsLitter AN YR meWinLitter AN YR meDrawLitter AN YR meLoserLitter AN YR playTreats 
+    
+        I HAS A useTreat ITZ 0
+        I HAS A playTreat ITZ 0
+        I HAS A treatsBowl ITZ 0
+        I HAS A trys ITZ bukkitOfNomz'Z SRS pos
+        I HAS A yrTry ITZ I IZ STRING'Z AT YR trys AN YR 0 MKAY
+        I HAS A meTry ITZ I IZ STRING'Z AT YR trys AN YR 2 MKAY
+        I HAS A yrGo ITZ ""
+        I HAS A meGo ITZ ""
+        
+        BOTH SAEM yrTry AN yrRukLitter, O RLY?
+            YA RLY, 
+                yrGo R "yrRuk"
+            MEBBE BOTH SAEM yrTry AN yrPapesLitter    
+                yrGo R "yrPapes"
+            NO WAI
+                yrGo R "yrSkizzors"
+        OIC
+        
+   
+        BOTH SAEM meTry AN meWinLitter, O RLY?
+            YA RLY, 
+                meGo R "meWin"
+            MEBBE BOTH SAEM meTry AN meDrawLitter    
+                meGo R "meDraw"
+            NO WAI
+                meGo R "meLoser"
+        OIC
+               
+        I HAS A playTreatBukkit ITZ playTreats'Z SRS yrGo
+        playTreat R playTreatBukkit'Z SRS meGo
+
+        FOUND YR playTreat
         
     
     IF U SAY SO
@@ -139,53 +170,79 @@ HAI 1.4
     I HAS A drawTreat ITZ 3
     I HAS A winTreat ITZ 6
 
+    I HAS A rukTreat ITZ 1
+    I HAS A papesTreat ITZ 2
+    I HAS A skizzorsTreat ITZ 3
+
     I HAS A playTreats ITZ A BUKKIT
 
     I HAS A yrRuk ITZ A BUKKIT
     yrRuk HAS A meRuk ITZ drawTreat
     yrRuk HAS A mePapes ITZ winTreat
     yrRuk HAS A meSkizzors ITZ loserTreat    
+    yrRuk HAS A meWin ITZ SUM OF papesTreat AN winTreat
+    yrRuk HAS A meDraw ITZ SUM OF rukTreat AN drawTreat
+    yrRuk HAS A meLoser ITZ SUM OF skizzorsTreat AN loserTreat 
     playTreats HAS A yrRuk ITZ yrRuk 
 
     I HAS A yrPapes ITZ A BUKKIT
     yrPapes HAS A meRuk ITZ loserTreat
     yrPapes HAS A mePapes ITZ drawTreat
     yrPapes HAS A meSkizzors ITZ winTreat
+    yrPapes HAS A meWin ITZ SUM OF skizzorsTreat AN winTreat
+    yrPapes HAS A meDraw ITZ SUM OF papesTreat AN drawTreat
+    yrPapes HAS A meLoser ITZ SUM OF rukTreat AN loserTreat 
     playTreats HAS A yrPapes ITZ yrPapes
+    
     
     I HAS A yrSkizzors ITZ A BUKKIT
     yrSkizzors HAS A meRuk ITZ winTreat
     yrSkizzors HAS A mePapes ITZ loserTreat
     yrSkizzors HAS A meSkizzors ITZ drawTreat
+    yrSkizzors HAS A meWin ITZ SUM OF rukTreat AN winTreat
+    yrSkizzors HAS A meDraw ITZ SUM OF skizzorsTreat AN drawTreat
+    yrSkizzors HAS A meLoser ITZ SUM OF papesTreat AN loserTreat 
     playTreats HAS A yrSkizzors ITZ yrSkizzors
     
-    I HAS A rukTreat ITZ 1
-    I HAS A papesTreat ITZ 2
-    I HAS A skizzorsTreat ITZ 3
+    
     
     I HAS A treatBowl ITZ 0 BTW NOES 4 LONG!
     I HAS A treat ITZ 0
-    I HAS A party ITZ FAIL
+    I HAS A party ITZ 1
+    
+    I HAS A yrRukLitter ITZ "A"
+    I HAS A yrPapesLitter ITZ "B"
+    I HAS A yrSkizzorsLitter ITZ "C"
     
     IM IN YR fruitLoopsChasingMeTail UPPIN YR pos TIL BOTH SAEM pos AN bukkitOfNomz'Z howLong
-    
-        I HAS A yrRukLitter ITZ "A"
-        I HAS A yrPapesLitter ITZ "B"
-        I HAS A yrSkizzorsLitter ITZ "C"
-    
+
         I HAS A meRukLitter ITZ "X"
         I HAS A mePapesLitter ITZ "Y"
         I HAS A meSkizzorsLitter ITZ "Z"
         
-        treat R I IZ playsARoond YR bukkitOfNomz AN YR pos AN YR rukTreat AN YR papesTreat AN YR skizzorsTreat AN YR yrRukLitter AN YR yrPapesLitter AN YR yrSkizzorsLitter AN YR meRukLitter AN YR mePapesLitter AN YR meSkizzorsLitter AN YR playTreats AN YR party MKAY
+        treat R I IZ playsARoond1 YR bukkitOfNomz AN YR pos AN YR rukTreat AN YR papesTreat AN YR skizzorsTreat AN YR yrRukLitter AN YR yrPapesLitter AN YR yrSkizzorsLitter AN YR meRukLitter AN YR mePapesLitter AN YR meSkizzorsLitter AN YR playTreats MKAY
         
         treatBowl R SUM OF treatBowl AN treat
         
-        BTW VISIBLE SMOOSH pos AN " " AN treatBowl MKAY
-
     IM OUTTA YR fruitLoopsChasingMeTail 
 
-    VISIBLE "HERE ME TREATS"
+    VISIBLE "HERE ME TREATS 1"
+    VISIBLE treatBowl
+    treatBowl R 0
+    
+    IM IN YR fruitLoopsChasingMeTail UPPIN YR pos TIL BOTH SAEM pos AN bukkitOfNomz'Z howLong
+    
+        I HAS A meWinLitter ITZ "Z"
+        I HAS A meDrawLitter ITZ "Y"
+        I HAS A meLoserLitter ITZ "X"
+        
+        treat R I IZ playsARoond2 YR bukkitOfNomz AN YR pos AN YR rukTreat AN YR papesTreat AN YR skizzorsTreat AN YR yrRukLitter AN YR yrPapesLitter AN YR yrSkizzorsLitter AN YR meWinLitter AN YR meDrawLitter AN YR meLoserLitter AN YR playTreats MKAY
+        
+        treatBowl R SUM OF treatBowl AN treat
+        
+    IM OUTTA YR fruitLoopsChasingMeTail 
+
+    VISIBLE "HERE ME TREATS 2"
     VISIBLE treatBowl
     
 
